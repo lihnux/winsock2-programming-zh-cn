@@ -85,26 +85,39 @@ void main(void)
 ```
 
 下面，让我们在Visual C++ 2008 Express Edition上测试一下这个程序。首先,我们可以更改新安装的 VC++ 启动页面以加载上次加载的解决方案。您可以跳过此“可选”步骤。单击“Tools”菜单>“Options”子菜单
+
 ![](./images/c01p01/winsock2advanced001.png)
 
 展开“Environment”文件夹>选择“Startup”链接>将“启动时”设置为“Load last loaded solution”>单击“OK”。
+
 ![](./images/c01p01/winsock2advanced002.png)
 
 1. 然后,我们可以开始创建 Win32 Console Application项目。单击“File”菜单>“Project”子菜单以创建新项目。
-
+   
    ![](./images/c01p01/winsock2advanced003.png)
+
 2. 对于“项目类型”:选择 Win32, 对于“模板”: 选择 Win32 Console Application。输入项目和解决方案名称。如果需要,请调整项目位置,然后单击“OK”。
+   
    ![](./images/c01p01/winsock2advanced004.png)
+
 3. 单击“Win32 Application Wizard Overview”页面上的“Next”。我们将删除所有不必要的项目项。
+   
    ![](./images/c01p01/winsock2advanced005.png)
+
 4. 在“Application Settings”页面上,为“Additional”:选择“Empty Project”。将其他内容保留为给定的,然后单击“Finish”。
+   
    ![](./images/c01p01/winsock2advanced006.png)
+
 5. 接下来,我们需要添加新的源文件。单击“Project”菜单>“Add New Item”子菜单,或在解决方案资源管理器中选择Solution Explorer>选择“Add”菜单>选择“New Item”子菜单。
+   
    ![](./images/c01p01/winsock2advanced007.png)
 
    ![](./images/c01p01/winsock2advanced008.png)
+
 6. 对于“Templates”:,选择 C++ File (.cpp)。输入源文件名,然后单击“Add”。 尽管扩展名是 .cpp,但基于稍后在项目属性页面中设置的编译为 C 代码(/TC)选项,Visual C++ IDE 将识别出所使用的源代码基于 C。
+   
    ![](./images/c01p01/winsock2advanced009.png)
+
 7. 现在,添加如下所示的源代码。
    ```C
    #include <winsock2.h>
@@ -162,19 +175,34 @@ void main(void)
    }
    ```
 8. 在我们可以构建此 Winsock C Win32 控制台应用程序项目之前,我们需要将项目设置为编译为 C 代码,并链接到 ws2_32.lib,即 Winsock2 库。调用项目属性页面。
+   
    ![](./images/c01p01/winsock2advanced010.png)
+
 9. 展开“Configuration”文件夹>展开“C/C++”子文件夹。选择“Advanced”链接,对于“Compile As”选项,选择“Compile as C Code (/TC)”。
+   
    ![](./images/c01p01/winsock2advanced011.png)
 10. 接下来,展开“Linker”文件夹并选择“Input”链接。 对于“Additional Dependencies”选项,单击右侧空字段末尾的省略号。
+    
    ![](./images/c01p01/winsock2advanced012.png)
+
 11. 手动键入库名称并单击“OK”。
+   
    ![](./images/c01p01/winsock2advanced013.png)
+
 12. 或者,您可以直接在“Additional Dependencies”的右侧空字段中键入库名称。 单击“OK”。
+   
    ![](./images/c01p01/winsock2advanced014.png)
+
 13. 生成项目,并确保没有错误(如果有),通常可以在 IDE 默认停靠在底部的输出窗口中看到错误。
+   
    ![](./images/c01p01/winsock2advanced015.png)
+
 14. 运行项目。
+   
    ![](./images/c01p01/winsock2advanced016.png)
+
 15. 如果没有错误,预期的输出示例如下所示。
+   
    ![](./images/c01p01/winsock2advanced017.png)
+
 好了,完成这个练习后,您应该熟悉创建空 Win32 控制台应用程序项目的步骤。 这些步骤将在本教程中的几乎所有 Winsock2 项目中重复。 现在我们准备好如何使用网络协议进行通信。
